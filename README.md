@@ -105,5 +105,5 @@ gem "test-kitchen", "= 1.4.2"
 
 All the gem dependencies are explicitly listed and pinned.  They are therefore inevitably  utilizing the versions from the default ChefDK path: `opt/chefdk/embedded/lib/ruby/gems`.  To replicate this determinism in your Gemfile, you would have to match and pin every gem dependency from the ChefDK in your cookbook Gemfile - no way!  Even if you choose some default, high-level gems to pin, you are taking on all the overhead responsibility for keeping track of and testing how they function with your installed ChefDK..
 
-## Summary
+## TL;DR
 If you need extra gems in your ChefDK based Development or CI environment, don't utilize bundler, it's great for other purposes, not this.  Utilize some other method like a cookbook to install gems.  Do not install Gems that are already included in the ChefDK (ie. kitchen, rubocop, foodcritic, chefspec etc) install only the gem that gives you the extra functionality you are missing from ChefDK.  Wipe out `~/.chefdk/gem` with every new install - they will be re-installed by your policy based method above.
